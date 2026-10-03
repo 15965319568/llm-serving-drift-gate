@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "serving-drift-gate"
-version = "0.1.0"
+version = "0.2.0"
 description = "Deterministic offline release gate for LLM inference serving"
 requires-python = ">=3.11"
 dependencies = []

@@ -28,7 +28,6 @@ def _truthy(value: Any) -> bool:
 
 
 def _rows_until(rows: Iterable[dict[str, Any]], field: str, cutoff) -> list[dict[str, Any]]:
-    # Starter defect: future evidence is included in every scenario.
     return list(rows)
 
 
@@ -97,6 +96,10 @@ def _load_bundle(input_dir: Path) -> dict[str, Any]:
         "claims": "operator_claims.ndjson",
         "incidents": "incident_events.ndjson",
         "routes": "route_history.csv",
+        "directives": "release_directives.ndjson",
+        "grants": "authority_grants.csv",
+        "revocations": "directive_revocations.ndjson",
+        "dashboard": "dashboard_snapshot.json",
     }
     missing = [name for name in required.values() if not (input_dir / name).is_file()]
     if missing:
@@ -118,6 +121,10 @@ def _load_bundle(input_dir: Path) -> dict[str, Any]:
         "claims": load_ndjson(input_dir / required["claims"]),
         "incidents": load_ndjson(input_dir / required["incidents"]),
         "routes": load_csv(input_dir / required["routes"]),
+        "directives": load_ndjson(input_dir / required["directives"]),
+        "grants": load_csv(input_dir / required["grants"]),
+        "revocations": load_ndjson(input_dir / required["revocations"]),
+        "dashboard": load_json(input_dir / required["dashboard"]),
     }
 
 
@@ -137,7 +144,6 @@ def _active_approval(approvals: list[dict[str, Any]], policy: dict[str, Any], cu
     latest = matching[-1]
     if str(latest.get("status")) != "approved":
         return False, "approval_not_approved"
-    # Starter defect: revocation is ignored.
     return True, "approval_active"
 
 
@@ -269,7 +275,6 @@ def _capacity_summary(
     latest: dict[str, dict[str, Any]] = {}
     authoritative_nodes = {str(row["node_id"]) for row in nodes if _truthy(row.get("authoritative", False))}
     for row in telemetry:
-        # Starter defect: shadow telemetry is accepted as authoritative.
         if row.get("model_version") != model_version:
             continue
         if parse_time(str(row["sampled_at"])) > cutoff:

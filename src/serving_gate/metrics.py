@@ -8,7 +8,6 @@ from typing import Iterable
 class BoundedMetrics:
     """Small in-process registry with a fixed label vocabulary and series cap."""
 
-    # Starter defect: request_id creates unbounded metric series.
     ALLOWED_LABELS = frozenset({"model_family", "model_version", "status", "scenario", "request_id"})
     MAX_SERIES = 32
     BUCKETS_MS = (50, 100, 250, 500, 1000, 2000, 5000)

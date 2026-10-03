@@ -1,17 +1,17 @@
-# 题目3：LLM Serving 推理服务漂移诊断与灰度放量门禁
+# LLM Serving Release Gate — starter v4
 
-本目录是一道面向“推理实现与 LLM serving 栈；服务基础设施与生产监控/漂移”的完整离线工程题。它把模型版本发布这个真实决策拆成 16 份异构原始附件、1560 条请求、72 条评测明细、6 个独立情景、逐 replica/租户/请求交付、as-of 重建、容量估算、延迟/错误 SLO、质量漂移、审批状态、路由结论和安全观测输出。
+This repository is the initial codebase for an offline LLM inference release-control engineering task. It includes a runnable Python CLI and readers for serving telemetry, evaluation results and operational evidence.
 
-公开仓库只包含待修复的运行时代码和打包元数据。任务输入、测试、标准实现和评测脚本由 Harbor 任务包单独提供，不会放入本仓库。
+The task is to repair and extend the release gate so that its decisions, tenant routing and operational handoff can be reproduced from the supplied evidence. The complete requirements, synthetic inputs, output contracts and evaluation environment are distributed in the Harbor task package.
 
-## 快速运行
+## Run in the supplied task workspace
 
-```powershell
-cd 题目3\llm-serving-drift-gate
-python scripts/seed_demo.py --out fixtures
-$env:PYTHONPATH = (Resolve-Path "src")
-python -m serving_gate --input fixtures --output output
-python -m unittest discover -s tests -v
+```bash
+PYTHONPATH=src python -m serving_gate --input fixtures --output output
 ```
 
-请按照 Harbor 任务中的 `TASK.md` 和合同文档实现完整的离线 serving release gate。实现必须从原始附件独立推导结果，并保持确定性、可审计和安全观测边界。
+Python 3.11 or newer is required. No GPU or third-party Python runtime dependencies are needed. The `fixtures` directory is supplied by the task environment and is not part of this public starter.
+
+The CLI entry point and arguments are stable. The current implementation is a starting point and does not meet the full release-control contract. Implementations may refactor modules while preserving the documented public interfaces.
+
+Reference solutions, verifier tests, private input bundles, expected results and model-evaluation credentials are not published here.
