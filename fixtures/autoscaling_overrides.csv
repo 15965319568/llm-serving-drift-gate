@@ -1,0 +1,9 @@
+revision_id,effective_at,max_canary_pct,status,reason,recorded_at
+route-default-05,2026-09-28T12:00:00Z,5,approved,pre-release warmup,2026-09-28T12:00:00Z
+route-base-20,2026-09-30T09:50:00Z,20,approved,base capacity verified,2026-09-30T09:50:00Z
+route-pressure-10,2026-10-01T09:50:00Z,10,approved,pressure protection,2026-10-01T09:50:00Z
+route-tenant-15,2026-10-01T17:20:00Z,15,approved,tenant mix protection,2026-10-01T17:20:00Z
+route-quality-20,2026-10-02T09:20:00Z,20,approved,quality review,2026-10-02T09:20:00Z
+route-revoked-20,2026-10-03T09:20:00Z,20,approved,release board review,2026-10-03T09:20:00Z
+backfill-denial,2026-09-30T09:55:00Z,0,approved,pre-release warmup,2026-10-02T11:00:00Z
+draft-proposal,2026-09-30T09:59:00Z,99,pending,pre-release warmup,2026-09-30T09:59:00Z

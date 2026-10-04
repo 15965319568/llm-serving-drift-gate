@@ -1,0 +1,208 @@
+{
+  "audit.ndjson": [
+    "event",
+    "reason_count",
+    "scenario",
+    "status"
+  ],
+  "capacity_replica_detail.csv": [
+    "scenario_id",
+    "evaluation_time",
+    "model_version",
+    "replica_id",
+    "included",
+    "reason",
+    "capacity_rps"
+  ],
+  "capacity_report.csv": [
+    "scenario_id",
+    "evaluation_time",
+    "model_version",
+    "usable_replicas",
+    "capacity_rps",
+    "excluded",
+    "telemetry_replicas"
+  ],
+  "cost_report.csv": [
+    "scenario_id",
+    "evaluation_time",
+    "model_version",
+    "requests",
+    "input_tokens",
+    "output_tokens",
+    "estimated_usd"
+  ],
+  "decision_matrix.csv": [
+    "scenario_id",
+    "evaluation_time",
+    "status",
+    "candidate_version",
+    "stable_version",
+    "candidate_canary_pct",
+    "stable_route_pct",
+    "traffic_rps",
+    "approval",
+    "route_flag_active",
+    "active_incident",
+    "quality_passed",
+    "tenant_slos_passed",
+    "input_psi",
+    "candidate_capacity_rps",
+    "stable_capacity_rps",
+    "reasons",
+    "allocation_feasible",
+    "selected_plan_id",
+    "projected_usd_per_s",
+    "route_cap_pct"
+  ],
+  "directive_audit.csv": [
+    "scenario_id",
+    "directive_id",
+    "tenant_class",
+    "kind",
+    "resolution",
+    "grant_ids",
+    "revocation_ids",
+    "related_ids"
+  ],
+  "drift_findings.csv": [
+    "scenario_id",
+    "slice",
+    "evaluated_rows",
+    "valid_rows",
+    "weighted_quality_delta",
+    "psi",
+    "critical",
+    "passed",
+    "reasons"
+  ],
+  "evidence_ledger.csv": [
+    "scenario_id",
+    "evaluation_time",
+    "approval_id",
+    "approval_state",
+    "route_flag_active",
+    "autoscaling_revision",
+    "formal_route_cap_pct",
+    "route_history_candidate_pct",
+    "candidate_release_id",
+    "candidate_registry_state",
+    "stable_release_id",
+    "candidate_latest_telemetry_at",
+    "stable_latest_telemetry_at",
+    "active_incident",
+    "tenant_budget_revision_count"
+  ],
+  "execution_plan.csv": [
+    "scenario_id",
+    "status",
+    "window_owner",
+    "rollback_target",
+    "window_valid",
+    "action",
+    "rollback_capacity_safe"
+  ],
+  "infeasibility_certificate.json": [
+    "schema_version",
+    "scenarios"
+  ],
+  "input_validation.json": [
+    "duplicate_request_ids",
+    "eval_rows",
+    "required_scenarios",
+    "required_slices",
+    "telemetry_rows",
+    "trace_rows"
+  ],
+  "model_metrics.csv": [
+    "scenario_id",
+    "evaluation_time",
+    "model_version",
+    "requests",
+    "error_rate",
+    "p95_ttft_ms",
+    "p95_e2e_ms",
+    "input_tokens",
+    "output_tokens",
+    "prompt_psi_vs_baseline"
+  ],
+  "observability_contract.json": [
+    "counters",
+    "histograms",
+    "series_count"
+  ],
+  "reconciliation_report.json": [
+    "all_pass",
+    "checks",
+    "counts",
+    "schema_version"
+  ],
+  "route_alternatives.csv": [
+    "scenario_id",
+    "plan_id",
+    "tenant_percentages",
+    "candidate_rps",
+    "stable_rps",
+    "projected_usd_per_s",
+    "feasible",
+    "selected",
+    "reasons"
+  ],
+  "run_manifest.json": [
+    "baseline_version",
+    "candidate_version",
+    "input_files",
+    "route_history_rows",
+    "scenario_count",
+    "schema_version"
+  ],
+  "source_reconciliation.csv": [
+    "claim_id",
+    "subject",
+    "claimed_value",
+    "claimed_at",
+    "source",
+    "resolution"
+  ],
+  "tenant_controls.csv": [
+    "scenario_id",
+    "tenant_class",
+    "raw_floor_pct",
+    "effective_floor_pct",
+    "frozen",
+    "emergency_stop",
+    "freeze_ids",
+    "floor_ids",
+    "waiver_ids",
+    "stop_ids"
+  ],
+  "tenant_health.csv": [
+    "scenario_id",
+    "evaluation_time",
+    "tenant_class",
+    "requests",
+    "error_rate",
+    "p95_ttft_ms",
+    "passed"
+  ],
+  "tenant_routing.csv": [
+    "scenario_id",
+    "tenant_class",
+    "traffic_rps",
+    "candidate_pct",
+    "stable_pct",
+    "candidate_rps",
+    "stable_rps",
+    "plan_feasible"
+  ],
+  "trace_audit.csv": [
+    "request_id",
+    "received_at",
+    "model_version",
+    "tenant_class",
+    "status",
+    "visible_scenario_count",
+    "first_visible_scenario",
+    "visible_scenarios"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "export_status": "Complete",
+  "generated_at": "2026-09-30T09:59:59Z",
+  "recommendations": [
+    {
+      "approval_display": "Complete",
+      "memo": "summary of planning workspace",
+      "readiness_score": 99,
+      "scenario_id": "ops-01",
+      "suggested_canary_pct": 20
+    },
+    {
+      "approval_display": "Complete",
+      "memo": "summary of planning workspace",
+      "readiness_score": 99,
+      "scenario_id": "ops-02",
+      "suggested_canary_pct": 20
+    },
+    {
+      "approval_display": "Complete",
+      "memo": "summary of planning workspace",
+      "readiness_score": 99,
+      "scenario_id": "ops-03",
+      "suggested_canary_pct": 20
+    },
+    {
+      "approval_display": "Complete",
+      "memo": "summary of planning workspace",
+      "readiness_score": 99,
+      "scenario_id": "ops-04",
+      "suggested_canary_pct": 20
+    },
+    {
+      "approval_display": "Complete",
+      "memo": "summary of planning workspace",
+      "readiness_score": 99,
+      "scenario_id": "ops-05",
+      "suggested_canary_pct": 20
+    }
+  ],
+  "source_watermark": "2026-09-30T09:00:00Z"
+}

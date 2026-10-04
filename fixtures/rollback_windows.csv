@@ -1,0 +1,16 @@
+scenario_id,window_start,window_end,owner,rollback_target
+pre-release,2026-09-29T12:00:00Z,2026-10-05T00:00:00Z,oncall-inference,orion-3.0
+base,2026-09-30T10:00:00Z,2026-10-05T00:00:00Z,oncall-inference,orion-3.0
+gpu-pressure,2026-10-01T10:00:00Z,2026-10-05T00:00:00Z,oncall-inference,orion-3.0
+tenant-skew,2026-10-01T18:00:00Z,2026-10-05T00:00:00Z,oncall-inference,orion-3.0
+quality-drift,2026-10-02T10:00:00Z,2026-10-05T00:00:00Z,oncall-inference,orion-3.0
+revoked-approval,2026-10-03T10:00:00Z,2026-10-05T00:00:00Z,oncall-inference,orion-3.0
+mixed-cap,2026-09-30T10:00:00Z,2026-10-05T00:00:00Z,oncall-inference,orion-3.0
+stable-tight,2026-09-30T10:00:00Z,2026-10-05T00:00:00Z,oncall-inference,orion-3.0
+cost-blocked,2026-09-30T10:00:00Z,2026-10-05T00:00:00Z,oncall-inference,orion-3.0
+joint-overload,2026-09-30T10:00:00Z,2026-10-05T00:00:00Z,oncall-inference,orion-3.0
+ops-01,2026-09-30T10:00:00Z,2026-10-05T00:00:00Z,oncall-inference,orion-3.0
+ops-02,2026-09-30T10:00:00Z,2026-10-05T00:00:00Z,oncall-inference,orion-3.0
+ops-03,2026-09-30T10:00:00Z,2026-10-05T00:00:00Z,oncall-inference,orion-3.0
+ops-04,2026-09-30T10:00:00Z,2026-10-05T00:00:00Z,oncall-inference,orion-3.0
+ops-05,2026-09-30T10:00:00Z,2026-10-05T00:00:00Z,oncall-inference,orion-3.0

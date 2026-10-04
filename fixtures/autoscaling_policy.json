@@ -1,0 +1,7 @@
+{
+  "max_canary_pct": 20,
+  "max_scale_events_per_hour": 2,
+  "min_ready_replicas": 2,
+  "pressure_action": "hold",
+  "scale_cooldown_seconds": 600
+}

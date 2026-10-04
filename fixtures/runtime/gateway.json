@@ -1,0 +1,35 @@
+{
+  "stable_version": "orion-3.0",
+  "candidate_version": "orion-3.1",
+  "worker_urls": {
+    "orion-3.0": "http://127.0.0.1:9101",
+    "orion-3.1": "http://127.0.0.1:9102"
+  },
+  "router_url": "http://127.0.0.1:9101",
+  "evidence_dir": "..",
+  "tenants": {
+    "enterprise": {
+      "max_running": 1,
+      "max_queued": 3
+    },
+    "pro": {
+      "max_running": 1,
+      "max_queued": 3
+    },
+    "free": {
+      "max_running": 1,
+      "max_queued": 3
+    }
+  },
+  "max_running": 2,
+  "max_attempts": 2,
+  "worker_timeout_ms": 30000,
+  "clock_start_ms": 10000,
+  "monitor": {
+    "window_ms": 10000,
+    "min_completed": 2,
+    "max_error_rate": 0.1,
+    "max_p95_ttft_ms": 100,
+    "max_input_psi": 0.25
+  }
+}

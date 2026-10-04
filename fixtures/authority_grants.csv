@@ -1,0 +1,8 @@
+grant_id,signer,permission,model_version,tenant_class,scenario_id,valid_from,valid_until,recorded_at,status,signature_valid
+grant-routine_freeze,ops-duty,routine_freeze,orion-3.1,*,*,2026-09-01T00:00:00Z,2026-11-01T00:00:00Z,2026-09-01T00:00:00Z,approved,true
+grant-continuity_floor,service-owner,continuity_floor,orion-3.1,*,*,2026-09-01T00:00:00Z,2026-11-01T00:00:00Z,2026-09-01T00:00:00Z,approved,true
+grant-freeze_waiver,release-board,freeze_waiver,orion-3.1,*,*,2026-09-01T00:00:00Z,2026-11-01T00:00:00Z,2026-09-01T00:00:00Z,approved,true
+grant-emergency_stop,security-duty,emergency_stop,orion-3.1,*,*,2026-09-01T00:00:00Z,2026-11-01T00:00:00Z,2026-09-01T00:00:00Z,approved,true
+grant-revoke,release-board,revoke,orion-3.1,*,*,2026-09-01T00:00:00Z,2026-11-01T00:00:00Z,2026-09-01T00:00:00Z,approved,true
+grant-late,backup-board,freeze_waiver,orion-3.1,*,*,2026-09-01T00:00:00Z,2026-11-01T00:00:00Z,2026-10-01T00:00:00Z,approved,true
+grant-support-free,support-manager,freeze_waiver,orion-3.1,free,*,2026-09-01T00:00:00Z,2026-11-01T00:00:00Z,2026-09-01T00:00:00Z,approved,true

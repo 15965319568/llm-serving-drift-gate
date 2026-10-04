@@ -1,0 +1,3 @@
+{"approval_id": "rel-31", "model_version": "orion-3.1", "revoked_at": "2026-10-02T12:00:00Z", "scope": "serving.release", "signed_at": "2026-09-28T10:00:00Z", "signer": "release-board", "status": "approved"}
+{"approval_id": "read-31", "model_version": "orion-3.1", "revoked_at": "", "scope": "serving.read", "signed_at": "2026-09-27T10:00:00Z", "signer": "release-board", "status": "approved"}
+{"approval_id": "old-30", "model_version": "orion-3.0", "revoked_at": "", "scope": "serving.release", "signed_at": "2026-09-01T10:00:00Z", "signer": "release-board", "status": "approved"}

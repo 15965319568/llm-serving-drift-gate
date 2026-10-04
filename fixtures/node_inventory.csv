@@ -1,0 +1,13 @@
+node_id,gpu_model,memory_gib,zone,authoritative
+gpu-01,A100-80G,80,az-0,true
+gpu-02,A100-80G,80,az-1,true
+gpu-03,A100-80G,80,az-2,true
+gpu-04,A100-80G,80,az-0,true
+gpu-05,A100-80G,80,az-1,true
+gpu-06,A100-80G,80,az-2,true
+gpu-07,A100-80G,80,az-0,true
+gpu-08,A100-80G,80,az-1,true
+gpu-09,A100-80G,80,az-2,true
+gpu-10,A100-80G,80,az-0,true
+gpu-11,A100-80G,80,az-1,true
+gpu-12,A100-80G,80,az-2,true

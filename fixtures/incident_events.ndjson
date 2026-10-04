@@ -1,0 +1,2 @@
+{"claim": "capacity pressure", "component": "gpu-scheduler", "event_id": "inc-gpu-01", "occurred_at": "2026-10-01T09:00:00Z", "resolved_at": "2026-10-01T20:00:00Z", "severity": "warning"}
+{"claim": "long-context regression", "component": "quality-monitor", "event_id": "inc-drift-01", "occurred_at": "2026-10-01T12:30:00Z", "resolved_at": "", "severity": "critical"}

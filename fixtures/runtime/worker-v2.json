@@ -1,0 +1,161 @@
+{
+  "protocol": "v2",
+  "default_case": {
+    "attempts": [
+      {
+        "chunks": [
+          {
+            "text": "OK",
+            "tokens": 1
+          }
+        ]
+      }
+    ]
+  },
+  "cases": {
+    "unicode": {
+      "attempts": [
+        {
+          "chunks": [
+            {
+              "text": "你好🌍",
+              "tokens": 2,
+              "duplicate": true
+            },
+            {
+              "text": " done",
+              "tokens": 1
+            }
+          ],
+          "fragment_bytes": 1
+        }
+      ]
+    },
+    "disconnect-before": {
+      "attempts": [
+        {
+          "chunks": [],
+          "outcome": "disconnect"
+        },
+        {
+          "chunks": [
+            {
+              "text": "recovered",
+              "tokens": 1
+            }
+          ]
+        }
+      ]
+    },
+    "disconnect-after": {
+      "attempts": [
+        {
+          "chunks": [
+            {
+              "text": "partial",
+              "tokens": 1
+            }
+          ],
+          "outcome": "disconnect"
+        }
+      ]
+    },
+    "held-before": {
+      "attempts": [
+        {
+          "chunks": [
+            {
+              "text": "released",
+              "tokens": 1
+            }
+          ],
+          "gate_before": "before"
+        }
+      ]
+    },
+    "held-after": {
+      "attempts": [
+        {
+          "chunks": [
+            {
+              "text": "visible",
+              "tokens": 1
+            }
+          ],
+          "gate_after": "after"
+        }
+      ]
+    },
+    "invalid-sequence": {
+      "attempts": [
+        {
+          "chunks": [
+            {
+              "text": "bad",
+              "tokens": 1
+            }
+          ],
+          "outcome": "bad_sequence"
+        }
+      ]
+    },
+    "conflicting-frame": {
+      "attempts": [
+        {
+          "chunks": [
+            {
+              "text": "one",
+              "tokens": 1
+            }
+          ],
+          "outcome": "conflicting_duplicate"
+        }
+      ]
+    },
+    "bad-usage": {
+      "attempts": [
+        {
+          "chunks": [
+            {
+              "text": "one",
+              "tokens": 1
+            }
+          ],
+          "outcome": "bad_usage"
+        }
+      ]
+    },
+    "retryable-before": {
+      "attempts": [
+        {
+          "chunks": [],
+          "outcome": "retryable_error"
+        },
+        {
+          "chunks": [
+            {
+              "text": "retry ok",
+              "tokens": 1
+            }
+          ]
+        }
+      ]
+    },
+    "fatal-before": {
+      "attempts": [
+        {
+          "chunks": [],
+          "outcome": "fatal_error"
+        }
+      ]
+    },
+    "always-disconnect": {
+      "attempts": [
+        {
+          "chunks": [],
+          "outcome": "disconnect"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,4 @@
+tenant_class,max_canary_pct,p95_ttft_ms,error_rate
+enterprise,20,450,0.02
+pro,15,500,0.04
+free,5,650,0.08

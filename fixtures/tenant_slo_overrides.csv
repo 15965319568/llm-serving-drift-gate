@@ -1,0 +1,6 @@
+revision_id,effective_at,tenant_class,max_canary_pct,p95_ttft_ms,error_rate,status,reason,recorded_at
+tenant-enterprise-01,2026-10-01T15:00:00Z,enterprise,18,430,0.018,approved,enterprise priority,2026-10-01T15:00:00Z
+tenant-pro-01,2026-10-01T15:00:00Z,pro,12,480,0.035,approved,pro tier protection,2026-10-01T15:00:00Z
+tenant-free-01,2026-10-01T15:00:00Z,free,5,620,0.06,approved,free tier protection,2026-10-01T15:00:00Z
+backfill-denial,2026-09-30T09:55:00Z,enterprise,0,430,0.018,approved,enterprise priority,2026-10-02T11:00:00Z
+draft-proposal,2026-09-30T09:59:00Z,enterprise,99,430,0.018,pending,enterprise priority,2026-09-30T09:59:00Z

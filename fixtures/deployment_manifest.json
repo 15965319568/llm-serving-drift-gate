@@ -1,0 +1,11 @@
+{
+  "baseline_version": "orion-3.0",
+  "candidate_version": "orion-3.1",
+  "context_limit": 8192,
+  "manifest_signed_at": "2026-09-27T08:00:00Z",
+  "max_batch_tokens": 4096,
+  "model_family": "orion",
+  "quantization": "int8",
+  "tensor_parallel": 2,
+  "throughput_multiplier": 0.92
+}

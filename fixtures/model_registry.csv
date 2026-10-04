@@ -1,0 +1,6 @@
+model_version,release_id,effective_at,state,context_limit,quantization,manifest_sha,recorded_at
+orion-3.0,stable-30,2026-09-20T00:00:00Z,active,8192,int8,manifest-stable,2026-09-20T00:00:00Z
+orion-3.1,candidate-31,2026-09-27T08:00:00Z,active,8192,int8,manifest-candidate,2026-09-27T08:00:00Z
+orion-3.1,candidate-31-hotfix,2026-10-02T08:00:00Z,active,8192,int8,manifest-candidate-hotfix,2026-10-02T08:00:00Z
+orion-3.1,candidate-31-retired,2026-10-04T00:00:00Z,retired,8192,int8,manifest-candidate-hotfix,2026-10-04T00:00:00Z
+orion-3.1,backfill-retired,2026-09-30T09:55:00Z,retired,8192,int8,manifest-candidate,2026-10-02T11:00:00Z

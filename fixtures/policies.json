@@ -1,0 +1,153 @@
+{
+  "approval_scope": "serving.release",
+  "baseline_version": "orion-3.0",
+  "candidate_version": "orion-3.1",
+  "capacity": {
+    "headroom": 0.15,
+    "max_gpu_mem_pct": 85,
+    "max_queue_depth": 8,
+    "mean_tokens_per_request": 1000
+  },
+  "critical_slices": [
+    "long-context",
+    "safety"
+  ],
+  "drift": {
+    "critical_quality_delta": -0.05,
+    "max_psi": 0.2,
+    "max_quality_delta": -0.03,
+    "min_valid_rows": 4
+  },
+  "policy_version": "serving-release-2026.09",
+  "required_slices": [
+    "code",
+    "general",
+    "long-context",
+    "multilingual",
+    "safety",
+    "tool-use"
+  ],
+  "routing": {
+    "step_pct": 5
+  },
+  "scenarios": [
+    {
+      "evaluation_time": "2026-09-29T12:00:00Z",
+      "max_projected_usd_per_s": 1.0,
+      "route_cap_pct": 5,
+      "scenario_id": "pre-release",
+      "traffic_rps": 30
+    },
+    {
+      "evaluation_time": "2026-09-30T10:00:00Z",
+      "max_projected_usd_per_s": 1.0,
+      "route_cap_pct": 20,
+      "scenario_id": "base",
+      "traffic_rps": 50
+    },
+    {
+      "evaluation_time": "2026-10-01T10:00:00Z",
+      "max_projected_usd_per_s": 1.0,
+      "route_cap_pct": 20,
+      "scenario_id": "gpu-pressure",
+      "traffic_rps": 120
+    },
+    {
+      "evaluation_time": "2026-10-01T18:00:00Z",
+      "max_projected_usd_per_s": 1.0,
+      "route_cap_pct": 20,
+      "scenario_id": "tenant-skew",
+      "tenant_mix": "enterprise-heavy",
+      "traffic_rps": 70
+    },
+    {
+      "evaluation_time": "2026-10-02T10:00:00Z",
+      "max_projected_usd_per_s": 1.0,
+      "route_cap_pct": 20,
+      "scenario_id": "quality-drift",
+      "traffic_rps": 50
+    },
+    {
+      "evaluation_time": "2026-10-03T10:00:00Z",
+      "max_projected_usd_per_s": 1.0,
+      "route_cap_pct": 20,
+      "scenario_id": "revoked-approval",
+      "traffic_rps": 50
+    },
+    {
+      "evaluation_time": "2026-09-30T10:00:00Z",
+      "max_projected_usd_per_s": 1,
+      "route_cap_pct": 7,
+      "scenario_id": "mixed-cap",
+      "traffic_rps": 50
+    },
+    {
+      "evaluation_time": "2026-09-30T10:00:00Z",
+      "max_projected_usd_per_s": 1,
+      "route_cap_pct": 20,
+      "scenario_id": "stable-tight",
+      "traffic_rps": 60
+    },
+    {
+      "evaluation_time": "2026-09-30T10:00:00Z",
+      "max_projected_usd_per_s": 0.0486,
+      "route_cap_pct": 7,
+      "scenario_id": "cost-blocked",
+      "traffic_rps": 50
+    },
+    {
+      "evaluation_time": "2026-09-30T10:00:00Z",
+      "max_projected_usd_per_s": 1,
+      "route_cap_pct": 20,
+      "scenario_id": "joint-overload",
+      "traffic_rps": 90
+    },
+    {
+      "evaluation_time": "2026-09-30T10:00:00Z",
+      "max_projected_usd_per_s": 1.0,
+      "route_cap_pct": 20,
+      "scenario_id": "ops-01",
+      "traffic_rps": 50
+    },
+    {
+      "evaluation_time": "2026-09-30T10:00:00Z",
+      "max_projected_usd_per_s": 1.0,
+      "route_cap_pct": 20,
+      "scenario_id": "ops-02",
+      "traffic_rps": 50
+    },
+    {
+      "evaluation_time": "2026-09-30T10:00:00Z",
+      "max_projected_usd_per_s": 1.0,
+      "route_cap_pct": 20,
+      "scenario_id": "ops-03",
+      "traffic_rps": 50
+    },
+    {
+      "evaluation_time": "2026-09-30T10:00:00Z",
+      "max_projected_usd_per_s": 1.0,
+      "route_cap_pct": 20,
+      "scenario_id": "ops-04",
+      "traffic_rps": 50
+    },
+    {
+      "evaluation_time": "2026-09-30T10:00:00Z",
+      "max_projected_usd_per_s": 1.0,
+      "route_cap_pct": 20,
+      "scenario_id": "ops-05",
+      "traffic_rps": 50
+    }
+  ],
+  "schema_version": "4",
+  "slo": {
+    "error_rate": 0.05,
+    "p95_e2e_ms": 1800,
+    "p95_ttft_ms": 500
+  },
+  "target_canary_pct": 20,
+  "tenant_classes": [
+    "enterprise",
+    "pro",
+    "free"
+  ]
+}

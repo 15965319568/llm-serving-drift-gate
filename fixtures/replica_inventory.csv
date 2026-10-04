@@ -1,0 +1,13 @@
+replica_id,node_id,model_version,ready_at,retired_at,prefill_tokens_s,decode_tokens_s,authoritative
+cand-r1,gpu-01,orion-3.1,2026-09-29T00:00:00Z,,10000,9000,true
+stable-r1,gpu-07,orion-3.0,2026-09-20T00:00:00Z,,12000,11000,true
+cand-r2,gpu-02,orion-3.1,2026-09-29T00:00:00Z,,10120,9100,true
+stable-r2,gpu-08,orion-3.0,2026-09-20T00:00:00Z,,12100,11080,true
+cand-r3,gpu-03,orion-3.1,2026-09-29T00:00:00Z,,10240,9200,true
+stable-r3,gpu-09,orion-3.0,2026-09-20T00:00:00Z,,12200,11160,true
+cand-r4,gpu-04,orion-3.1,2026-09-29T00:00:00Z,,10360,9300,true
+stable-r4,gpu-10,orion-3.0,2026-09-20T00:00:00Z,,12300,11240,true
+cand-r5,gpu-05,orion-3.1,2026-09-29T00:00:00Z,,10480,9400,true
+stable-r5,gpu-11,orion-3.0,2026-09-20T00:00:00Z,,12400,11320,true
+cand-r6,gpu-06,orion-3.1,2026-09-29T00:00:00Z,,10600,9500,true
+stable-r6,gpu-12,orion-3.0,2026-09-20T00:00:00Z,,12500,11400,true

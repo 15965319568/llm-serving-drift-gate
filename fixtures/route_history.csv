@@ -1,0 +1,6 @@
+changed_at,scenario_id,stable_pct,candidate_pct,changed_by
+2026-09-28T09:00:00Z,pre-release,100,0,scheduler
+2026-09-30T09:45:00Z,base,90,10,operator
+2026-10-01T09:45:00Z,gpu-pressure,80,20,operator
+2026-10-01T17:30:00Z,tenant-skew,85,15,scheduler
+2026-10-02T09:30:00Z,quality-drift,100,0,quality-bot

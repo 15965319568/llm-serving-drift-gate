@@ -1,0 +1,3 @@
+{"directive_id": "ops-03-W1", "recorded_at": "2026-09-30T10:00:00Z", "revocation_id": "revoke-ops03", "revoked_at": "2026-09-30T10:00:00Z", "signature_valid": true, "signer": "release-board", "status": "approved"}
+{"directive_id": "ops-02-W1", "recorded_at": "2026-09-30T10:00:00Z", "revocation_id": "revoke-ops02-unsupported", "revoked_at": "2026-09-30T10:00:00Z", "signature_valid": true, "signer": "support-manager", "status": "approved"}
+{"directive_id": "ops-02-W1", "recorded_at": "2026-10-01T00:00:00Z", "revocation_id": "revoke-ops02-backfill", "revoked_at": "2026-09-30T10:00:00Z", "signature_valid": true, "signer": "release-board", "status": "approved"}

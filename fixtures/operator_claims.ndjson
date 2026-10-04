@@ -1,0 +1,12 @@
+{"claim_id": "chat-00", "claimed_at": "2026-09-29T08:00:00Z", "source": "operator-chat", "subject": "candidate_version", "value": "orion-3.1"}
+{"claim_id": "chat-01", "claimed_at": "2026-09-29T08:01:00Z", "source": "operator-chat", "subject": "target_canary_pct", "value": "50"}
+{"claim_id": "chat-02", "claimed_at": "2026-09-29T08:02:00Z", "source": "operator-chat", "subject": "approval_scope", "value": "serving.release"}
+{"claim_id": "chat-03", "claimed_at": "2026-09-29T08:03:00Z", "source": "operator-chat", "subject": "gpu_pressure", "value": "clear"}
+{"claim_id": "chat-04", "claimed_at": "2026-09-29T08:04:00Z", "source": "operator-chat", "subject": "quality_status", "value": "pass"}
+{"claim_id": "chat-05", "claimed_at": "2026-09-29T08:05:00Z", "source": "operator-chat", "subject": "rollback_owner", "value": "model-team"}
+{"claim_id": "chat-06", "claimed_at": "2026-09-29T08:06:00Z", "source": "operator-chat", "subject": "tenant_mix", "value": "all-equal"}
+{"claim_id": "chat-07", "claimed_at": "2026-09-29T08:07:00Z", "source": "operator-chat", "subject": "quantization", "value": "fp16"}
+{"claim_id": "chat-08", "claimed_at": "2026-09-29T08:08:00Z", "source": "operator-chat", "subject": "route_cap_pct", "value": "30"}
+{"claim_id": "chat-09", "claimed_at": "2026-09-29T08:09:00Z", "source": "operator-chat", "subject": "candidate_version", "value": "orion-3.0"}
+{"claim_id": "chat-10", "claimed_at": "2026-09-29T08:10:00Z", "source": "operator-chat", "subject": "quality_status", "value": "pass"}
+{"claim_id": "chat-11", "claimed_at": "2026-09-29T08:11:00Z", "source": "operator-chat", "subject": "gpu_pressure", "value": "clear"}

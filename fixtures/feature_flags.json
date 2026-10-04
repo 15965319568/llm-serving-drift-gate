@@ -1,0 +1,10 @@
+{
+  "candidate_route": {
+    "disabled_at": "2026-10-03T12:00:00Z",
+    "enabled_at": "2026-09-28T12:00:00Z"
+  },
+  "shadow_quality_probe": {
+    "disabled_at": null,
+    "enabled_at": "2026-09-20T00:00:00Z"
+  }
+}
