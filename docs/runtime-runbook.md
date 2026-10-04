@@ -49,3 +49,5 @@ python -m serving_gate inspect --state gateway.db --output runtime-output
 worker 的 gate_before/gate_after 与 /admin/signals 可固定断点，让请求保持在首个输出之前或之后；一次性 router 故障可分别重现应用前失败和应用后回执丢失。按可观察事件触发实验，避免靠随机等待猜测故障时点。
 
 核验至少要同时看客户端输出、网关安全快照、worker attempt 记录和独立 router 的 revision/apply_count。各自局部显示“成功”不意味着跨进程事实已经一致。合同允许真实的拒绝、失败与阻断结果；不得为了生成成功结果跳过约束。
+
+本地验收对启动就绪、普通HTTP响应和本应完成的请求设30秒无进展看门狗，防止单个挂起占满整套验收时限；它不计算性能得分，也不是模型的解题超时。故障屏障由核验方明确放行，服务不应靠等待真实长时间来推进回放时钟。

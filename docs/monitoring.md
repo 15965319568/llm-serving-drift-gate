@@ -1,6 +1,6 @@
 # 运行监控、证据时点与安全导出
 
-POST /v1/telemetry 接收 `{"events":[...]}`，用于导入已有网关的合成历史。每事件包含 `event_id,request_id,tenant,model_version,kind,event_ms,recorded_ms,attempt,data`。时间和 attempt 为非负整数；kind 为 accepted、attempt_started、first_token、finished；tenant/model_version 必须已配置。data 是对象：accepted/attempt_started/first_token 可为空；finished 必须含 status（SUCCEEDED/FAILED/CANCELLED/EXPIRED）、input_tokens/output_tokens（非负整数）。
+POST /v1/telemetry 接收 `{"events":[...]}`，用于导入已有网关的合成历史。成功以200返回 `{"accepted":N}`，N为本批实际新增的事件数，不包含相同事件的重放。每事件包含 `event_id,request_id,tenant,model_version,kind,event_ms,recorded_ms,attempt,data`。时间和 attempt 为非负整数；kind 为 accepted、attempt_started、first_token、finished；tenant/model_version 必须已配置。data 是对象：accepted/attempt_started/first_token 可为空；finished 必须含 status（SUCCEEDED/FAILED/CANCELLED/EXPIRED）、input_tokens/output_tokens（非负整数）。
 
 event_id 全局唯一；完全相同事件重放不增加记录，相同ID不同内容返回409，整批不提交。格式错400，整批不提交。未知额外顶层字段拒绝；data 仅允许 input_tokens/output_tokens/status，防止导入任意 prompt、URL 或 secrets。不要求导入时事件已到达当前时点，报告查询同时限制业务时间和 recorded_ms。内部请求也产生同结构事件，记录业务时钟；不存原始 prompt/key/text。event_id 的 internal: 前缀保留给内部事件，外部导入该前缀返回400。
 

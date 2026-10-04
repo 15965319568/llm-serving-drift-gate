@@ -2,7 +2,7 @@
 
 POST /v1/control/lease `{holder,ttl_ms}` 获取/续约发布执行权，holder非空、ttl_ms正整数。没有未过期租约时新授予 epoch（严格递增）；同holder未过期续约保留epoch；不同holder且租约未过期409。有效窗口为 now_ms<expires_ms。返回 `{holder,epoch,expires_ms}` 前须使外部router接受对应fence；网络失败503。租约持久化，重启不重置epoch或时间。
 
-POST /v1/control/releases 为 `{action_id,holder,epoch,expected_revision,scenario_id,operation}`。operation 为 PROMOTE/ROLLBACK；epoch和expected_revision非负整数，其余非空字符串。action_id语义幂等：完全相同请求返回已有动作，不重复推进外部配置；同ID不同请求409，即使动作已失败或租约变化也不能覆盖原动作。
+POST /v1/control/releases 为 `{action_id,holder,epoch,expected_revision,scenario_id,operation}`。operation 为 PROMOTE/ROLLBACK；epoch和expected_revision非负整数，其余非空字符串。action_id语义幂等：完全相同请求以200返回已有动作，不重复推进外部配置；同ID不同请求409，即使动作已失败或租约变化也不能覆盖原动作。
 
 新动作先验证本地租约和当前路由版本；租约无效409/error=lease_invalid，版本错误409/error=revision_conflict。必须读取现有 evidence_dir 的正式离线门禁结果。未知scenario400。
 
@@ -13,6 +13,8 @@ PROMOTE 必须离线决策为 CANARY，且 monitoring.md 的实时窗口通过�
 通过预检后须先持久化 PREPARED，再调用 router/apply。接纳返回202和动作快照。正常获得回执后 state=APPLIED，并原子更新本地 routing revision/routes；不能先更新本地 observed 再执行外部。网络错误/5xx时保持 PREPARED/error=router_unavailable。外部409则 ABORTED/error=router_conflict，不修改本地 observed。
 
 动作快照必需字段：action_id,state（PREPARED/APPLIED/ABORTED）,operation,scenario_id,epoch,expected_revision,routes,revision,error。未应用revision为null，正常无错error为null。holder、内部请求指纹、URL不必出现在快照中。
+
+GET /v1/control/actions/{action_id} 以200返回该动作快照；未知动作404。GET查询不触发重放。获取/续约租约和reconcile成功均返回200。
 
 POST /v1/control/reconcile（无必需body）或服务启动恢复处理 PREPARED：
 

@@ -16,7 +16,7 @@
 
 ## HTTP 通用行为
 
-请求和 JSON 响应均使用 UTF-8。必需字段缺失、错误类型、非有限数、负数、非法 JSON/未知操作返回 400；未知对象 404。JSON 错误至少包含 `error` 字符串，可以附带安全诊断。额外响应字段允许，不能与合同事实矛盾。不依赖 JSON 键顺序。HTTP 对象大小上限为 1 MiB，超过返回 413。该大小是接口协议限制，不是模型运行资源设置。
+请求和 JSON 响应均使用 UTF-8。必需字段缺失、错误类型、非有限数、负数、非法 JSON/非法操作枚举返回 400；未知对象或端点 404。JSON 错误至少包含 `error` 字符串，可以附带安全诊断。额外响应字段允许，不能与合同事实矛盾。不依赖 JSON 键顺序。HTTP 对象大小上限为 1 MiB，超过返回 413。该大小是接口协议限制，不是模型运行资源设置。
 
 GET /health 返回 `{"status":"ok"}`。GET /v1/snapshot 返回下面六个字段：`schema_version:2`、`now_ms`、`requests`、`invoices`、`routing`、`actions`。列表按 request_id/action_id 字典序排序。routing 为 `{revision, routes}`，routes 为每租户的候选百分比（整数 0..100）。actions 见 release-runtime.md。
 
@@ -44,4 +44,4 @@ worker 断流/可重试错误只在本请求尚无持久 delta 且尝试数 < ma
 
 ## 旧状态兼容
 
-须支持 fixtures/runtime/legacy-v1.sql 所描述的 user_version=1 数据库，保留旧请求 request_id、键作用域、指纹、模型版本、状态、生成事件、成功账单和时钟。迁移至 user_version=2；重复启动迁移幂等。新建库使用同一外部行为。现有 SQL 表名是旧输入格式，迁移后的内部表结构不受判分约束。
+须支持 fixtures/runtime/legacy-v1.sql 所描述的 user_version=1 数据库，保留旧请求 request_id、键作用域、指纹、模型版本、状态、生成事件、成功账单和时钟。旧请求没有 route_revision 时取0，缺失的 error 取null。迁移至 user_version=2；重复启动迁移幂等。新建库使用同一外部行为。现有 SQL 表名是旧输入格式，迁移后的内部表结构不受判分约束。
